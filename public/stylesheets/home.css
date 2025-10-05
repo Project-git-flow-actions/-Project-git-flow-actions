@@ -1,48 +1,25 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #1e1e2f;
-  color: #fff;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+/* =============================================== /
+/ ARQUIVO CSS PARA ESTILOS ESPECÍFICOS DA HOME.EJS /
+/ =============================================== /
+
+/ Exemplo: Mudar o título H1 apenas na página Home para uma cor diferente /
+.home-header h1 {
+    color: #00ddff; / Um ciano mais brilhante /
 }
 
-header {
-  padding: 40px 0;
-  background-color: #27293d;
+/ Exemplo: Adicionar uma animação de fade-in para os cards da home */
+
+.card-container .card {
+    animation: fadeIn 0.8s ease-out forwards;
 }
 
-h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1.2em;
-  color: #ccc;
-}
-
-.games {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.game-card {
-  background-color: #3a3c5c;
-  padding: 20px;
-  border-radius: 12px;
-  width: 200px;
-}
-
-.game-card h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.game-card p {
-  font-size: 1em;
-  color: #ddd;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
