@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/home.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1><%= title %></h1>
+      <p>Bem-vindo à nossa página de games!</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Games</a></li>
+        <li><a href="/livros">Livros de Fantasia</a></li>
+
+        <li><a href="/login" class="button">Login</a></li>
+        <li><a href="/register" class="button">Cadastrar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <% if (typeof message !== 'undefined' && message) { %>
+  <script>
+    alert("<%= message %>");
+  </script>
+<% } %>
+
+  <main>
+    <section class="card-container">
+      <div class="card">
+        <h2>The Legend of Zelda</h2>
+        <p>Aventure-se pelo mundo de Hyrule em busca da Triforce.</p>
+      </div>
+      <div class="card">
+        <h2>Minecraft</h2>
+        <p>Construa, minere e explore mundos cúbicos infinitos.</p>
+      </div>
+      <div class="card">
+        <h2>Fortnite</h2>
+        <p>Participe de batalhas épicas no modo Battle Royale.</p>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

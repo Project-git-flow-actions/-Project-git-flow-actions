@@ -1,0 +1,25 @@
+/* =============================================== /
+/ ARQUIVO CSS PARA ESTILOS ESPECÍFICOS DA HOME.EJS /
+/ =============================================== /
+
+/ Exemplo: Mudar o título H1 apenas na página Home para uma cor diferente /
+.home-header h1 {
+    color: #00ddff; / Um ciano mais brilhante /
+}
+
+/ Exemplo: Adicionar uma animação de fade-in para os cards da home */
+
+.card-container .card {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
