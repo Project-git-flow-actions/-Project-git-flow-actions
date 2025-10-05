@@ -23,6 +23,12 @@
     </nav>
   </header>
 
+  <% if (typeof message !== 'undefined' && message) { %>
+  <script>
+    alert("<%= message %>");
+  </script>
+<% } %>
+
   <main>
     <section class="card-container">
       <div class="card">
