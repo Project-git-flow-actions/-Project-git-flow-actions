@@ -1,0 +1,29 @@
+name: CI/CD - Node.js
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar build (se existir)
+        run: npm run build || echo "Sem script de build"
+
+      - name: Iniciar servidor
+        run: npm start &
