@@ -41,4 +41,19 @@ const { username, email, password,  } = req.body;
   return res.render('register', { title: 'cadastro', message: 'Falha no Cadastro' })
 })
 
+router.post('/login', (req, res) => {
+  const { username, password } = req.body;
+  const users = JSON.parse(fs.readFileSync('./database/users.json'));
+
+  const user = users.find(u => (u.username === username || u.email === username) && u.password === password);
+
+  if (user) {
+    req.session.user = user; // usuário logado na sessão
+    console.log(`Usuário ${user.username} fez login em: ${new Date().toISOString()}`);
+    return res.render('home', { title: 'Game Zone', usuario: user, message: 'Login realizado com sucesso!' });
+  }
+
+  return res.render('login', { title: 'Login', message: 'Credenciais inválidas!' });
+});
+
 module.exports = router;
