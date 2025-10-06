@@ -19,6 +19,14 @@ router.get('/register', (req, res) => {
   res.render('register', { title: 'cadastro' });
 });
 
+// rota de logout
+router.get('/logout', (req, res) => {
+  console.log(`Usuário ${req.session.user?.username || 'desconhecido'} fez logout em: ${new Date().toISOString()}`);
+  req.session.destroy(() => {
+    res.render('home', { title: 'Game Zone', message: 'Logout realizado com sucesso!' });
+  });
+});
+
 
 router.post('/register', (req,res) => {
 const { username, email, password,  } = req.body;
