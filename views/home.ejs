@@ -14,11 +14,15 @@
     </div>
     <nav>
       <ul>
-        <li><a href="/">Games</a></li>
-        <li><a href="/livros">Livros de Fantasia</a></li>
+  <li><a href="/">Games</a></li>
+  <li><a href="/livros">Livros de Fantasia</a></li>
 
-        <li><a href="/login" class="button">Login</a></li>
-        <li><a href="/register" class="button">Cadastrar</a></li>
+<% if (typeof usuario !== "undefined" && usuario) { %>
+          <li><a href="/logout" class="button">Logout</a></li>
+        <% } else { %>
+          <li><a href="/login" class="button">Login</a></li>
+          <li><a href="/register" class="button">Cadastrar</a></li>
+        <% } %>
       </ul>
     </nav>
   </header>
